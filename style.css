@@ -194,14 +194,16 @@ body {
     }
 }
 
-/* NOVA SEÇÃO SOBRE NÓS */
+/* SEÇÃO SOBRE NÓS COM CENTRALIZAÇÃO E MARGENS */
 .secao-sobre {
-    padding: 60px 20px;
+    padding: 50px 20px;
     background-color: #000;
     background-image: url('fundo-texturizado.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    max-width: 100vw;
-    overflow-x: hidden;
+    max-width: 90%;
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
