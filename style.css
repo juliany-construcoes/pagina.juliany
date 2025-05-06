@@ -23,7 +23,7 @@ body {
     position: relative;
 }
 
-/* FUNDO DE IMAGEM FIXO */
+/* FUNDO DE IMAGEM FIXO GERAL */
 .fundo-imagem {
     position: fixed;
     top: 0;
@@ -195,12 +195,12 @@ body {
     }
 }
 
-/* SEÇÃO SOBRE NÓS – FUNDO PRETO LISO, CENTRALIZADA */
+/* SEÇÃO SOBRE NÓS – SEM FUNDO, FLUTUANDO */
 .secao-sobre {
     padding: 40px 20px;
-    background-color: #000;
     max-width: 90%;
     margin: 40px auto;
     border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    z-index: 2;
+    position: relative;
 }
