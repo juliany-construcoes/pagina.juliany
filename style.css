@@ -195,14 +195,10 @@ body {
     }
 }
 
-/* SEÇÃO SOBRE NÓS CENTRALIZADA E COM MARGEM */
+/* SEÇÃO SOBRE NÓS – FUNDO PRETO LISO, CENTRALIZADA */
 .secao-sobre {
     padding: 40px 20px;
     background-color: #000;
-    background-image: url('fundo-texturizado.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     max-width: 90%;
     margin: 40px auto;
     border-radius: 12px;
