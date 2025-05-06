@@ -1,0 +1,188 @@
+@font-face {
+    font-family: 'Koblenz';
+    src: url('./fonts/KoblenzSerial-HeavyItalic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'KoblenzLight';
+    src: url('./fonts/KoblenzSerial-Light.otf.otf') format('opentype');
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+/* NOVO FUNDO DE IMAGEM ESTÁTICA */
+.fundo-imagem {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('fundo-texturizado.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -3;
+}
+
+/* LOSANGOS */
+.fundo-losangos {
+    position: fixed;
+    top: -25%;
+    left: 0;
+    width: 150%;
+    height: 150vh;
+    object-fit: cover;
+    z-index: -2;
+    opacity: 0.6;
+    animation: mover-losangos 10s linear infinite;
+    pointer-events: none;
+    filter: brightness(70%);
+}
+
+@keyframes mover-losangos {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+/* CONTEÚDO PRINCIPAL */
+.overlay {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* FOTO DE PERFIL E TÍTULO */
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.foto-com-contorno {
+    position: relative;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 3px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.foto-com-contorno img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile h1 {
+    font-family: 'Koblenz', sans-serif;
+    color: #ffc107;
+    margin-bottom: 5px;
+    font-size: 32px;
+}
+
+.profile h1 .j-branco {
+    color: #fff;
+}
+
+.profile p {
+    font-size: 0.9em;
+    color: #ddd;
+    text-align: center;
+}
+
+/* BOTÕES */
+.links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.button {
+    font-family: 'KoblenzLight', sans-serif;
+    padding: 15px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    color: #000;
+    text-align: center;
+}
+
+.button:nth-child(odd) {
+    background-color: #ffc107;
+}
+
+.button:nth-child(even) {
+    background-color: #fff;
+}
+
+.button:hover {
+    opacity: 0.85;
+    transform: scale(1.03);
+}
+
+/* DESCRIÇÃO FINAL */
+.description {
+    font-family: 'KoblenzLight', sans-serif;
+    color: #fff;
+    font-size: 0.85em;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.5em;
+}
+
+/* NOVA SEÇÃO DE VÍDEO */
+.video-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 360px;
+    margin-bottom: 40px;
+}
+
+.video-section video {
+    width: 100%;
+    border: 2px solid #fff;
+    border-radius: 12px;
+}
+
+.video-section p {
+    color: #ccc;
+    font-size: 0.85em;
+    text-align: center;
+    margin-top: 10px;
+    line-height: 1.4em;
+}
+
+/* RESPONSIVO */
+@media (max-aspect-ratio: 3/4) {
+    .fundo-imagem {
+        background-position: center top;
+    }
+}

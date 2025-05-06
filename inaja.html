@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja de Inajá</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #000 url('fundo-texturizado.png') center/cover no-repeat;
+      font-family: 'KoblenzLight', sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .subtitulo {
+      font-family: 'KoblenzLight', sans-serif;
+      font-size: 1.1em;
+      color: #fff;
+      margin-bottom: 30px;
+    }
+
+    .botao-com-icone {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .icone-img {
+      width: 30px;
+      height: 30px;
+      margin-right: 12px;
+      animation: flutuar 2s ease-in-out infinite;
+      filter: brightness(200%) drop-shadow(0 0 5px white);
+    }
+
+    @keyframes flutuar {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .button {
+      width: 220px;
+      padding: 15px;
+      border-radius: 25px;
+      font-family: 'KoblenzLight', sans-serif;
+      text-decoration: none;
+      color: #000;
+      transition: all 0.2s ease-in-out;
+      text-align: center;
+    }
+
+    .botao-com-icone:nth-of-type(1) .button,
+    .botao-com-icone:nth-of-type(3) .button {
+      background-color: #ffc107;
+    }
+
+    .botao-com-icone:nth-of-type(2) .button {
+      background-color: #fff;
+    }
+
+    .button:hover {
+      transform: scale(1.03);
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+  <div class="subtitulo">A loja está a um clique de você.</div>
+
+  <div class="botao-com-icone">
+    <img src="icone-whatsapp.png" class="icone-img" alt="WhatsApp">
+    <a href="https://wa.me/558799861708" class="button" target="_blank">WhatsApp</a>
+  </div>
+
+  <div class="botao-com-icone">
+    <img src="icone-localizacao.png" class="icone-img" alt="Localização">
+    <a href="https://maps.app.goo.gl/uRLTBbUy2Usf8dj46" class="button" target="_blank">Localização</a>
+  </div>
+
+  <div class="botao-com-icone">
+    <img src="icone-instagram.png" class="icone-img" alt="Instagram">
+    <a href="https://www.instagram.com/julianyconstrucoes" class="button" target="_blank">Instagram</a>
+  </div>
+</body>
+</html>
