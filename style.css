@@ -1,56 +1,207 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Link da Bio da Juliany</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+@font-face {
+    font-family: 'Koblenz';
+    src: url('./fonts/KoblenzSerial-HeavyItalic.otf') format('opentype');
+}
 
-  <div class="fundo-imagem"></div>
-  <img src="losangos.png" alt="Efeito visual" class="fundo-losangos">
+@font-face {
+    font-family: 'KoblenzLight';
+    src: url('./fonts/KoblenzSerial-Light.otf.otf') format('opentype');
+}
 
-  <div class="overlay">
-    <div class="profile">
-      <div class="foto-com-contorno">
-        <img src="foto-perfil-animada.gif" alt="Foto de Perfil da Juliany" />
-      </div>
-      <h1><span class="j-branco">J</span>uliany</h1>
-      <p>construções, irrigações e presentes</p>
-    </div>
+html {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
 
-    <div class="links">
-      <a href="ibimirim.html" class="button">LOJA DE IBIMIRIM</a>
-      <a href="inaja.html" class="button">LOJA DE INAJÁ</a>
-      <a href="#sobre-nos" class="button">SOBRE NÓS</a>
-    </div>
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000;
+    overflow-x: hidden;
+    width: 100vw;
+    position: relative;
+}
 
-    <div class="scroll-down"></div>
+/* NOVO FUNDO DE IMAGEM ESTÁTICA */
+.fundo-imagem {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('fundo-texturizado.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -3;
+}
 
-    <div class="description">
-      Trabalhamos com uma linha completa de equipamentos, motosserras, ferramentas e peças originais. Qualidade garantida, pronta entrega e suporte direto na loja.
-    </div>
+/* LOSANGOS AJUSTADO */
+.fundo-losangos {
+    position: fixed;
+    top: -25%;
+    left: 0;
+    width: 100%;
+    height: 150vh;
+    object-fit: cover;
+    z-index: -2;
+    opacity: 0.6;
+    animation: mover-losangos 10s linear infinite;
+    pointer-events: none;
+    filter: brightness(70%);
+}
 
-    <div class="video-section">
-      <video autoplay muted loop playsinline>
-        <source src="video-motosserra.mp4" type="video/mp4">
-        Seu navegador não suporta vídeo HTML5.
-      </video>
-      <p>Confira nossa motosserra Stihl em funcionamento! Temos à venda tanto as máquinas quanto as peças de reposição. Tudo com qualidade e atendimento direto na loja.</p>
-    </div>
-  </div>
+@keyframes mover-losangos {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
 
-  <!-- SEÇÃO SOBRE NÓS COM CLASSE CORRIGIDA -->
-  <div id="sobre-nos" class="secao-sobre">
-    <h2 style="text-align: center; color: white; font-size: 28px;">Sobre Nós</h2>
-    <p style="max-width: 800px; margin: 20px auto; line-height: 1.6; font-size: 18px; color: #ccc;">
-      A Juliany Construções nasceu com o compromisso de oferecer soluções completas em construção civil, irrigação e presentes.
-      Nossa missão é atender com qualidade, variedade e atendimento personalizado, seja para quem está construindo seu lar ou presenteando alguém especial.
-      <br><br>
-      Atuamos em duas cidades com estrutura completa, oferecendo produtos confiáveis e um atendimento que respeita o tempo e a necessidade de cada cliente. Aqui, cada detalhe importa.
-    </p>
-  </div>
+/* CONTEÚDO PRINCIPAL */
+.overlay {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-</body>
-</html>
+/* FOTO DE PERFIL E TÍTULO */
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.foto-com-contorno {
+    position: relative;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 3px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.foto-com-contorno img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile h1 {
+    font-family: 'Koblenz', sans-serif;
+    color: #ffc107;
+    margin-bottom: 5px;
+    font-size: 32px;
+}
+
+.profile h1 .j-branco {
+    color: #fff;
+}
+
+.profile p {
+    font-size: 0.9em;
+    color: #ddd;
+    text-align: center;
+}
+
+/* BOTÕES */
+.links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.button {
+    font-family: 'KoblenzLight', sans-serif;
+    padding: 15px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    color: #000;
+    text-align: center;
+}
+
+.button:nth-child(odd) {
+    background-color: #ffc107;
+}
+
+.button:nth-child(even) {
+    background-color: #fff;
+}
+
+.button:hover {
+    opacity: 0.85;
+    transform: scale(1.03);
+}
+
+/* DESCRIÇÃO FINAL */
+.description {
+    font-family: 'KoblenzLight', sans-serif;
+    color: #fff;
+    font-size: 0.85em;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.5em;
+}
+
+/* NOVA SEÇÃO DE VÍDEO */
+.video-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 360px;
+    margin-bottom: 40px;
+}
+
+.video-section video {
+    width: 100%;
+    border: 2px solid #fff;
+    border-radius: 12px;
+}
+
+.video-section p {
+    color: #ccc;
+    font-size: 0.85em;
+    text-align: center;
+    margin-top: 10px;
+    line-height: 1.4em;
+}
+
+/* RESPONSIVO */
+@media (max-aspect-ratio: 3/4) {
+    .fundo-imagem {
+        background-position: center top;
+    }
+}
+
+/* NOVA SEÇÃO SOBRE NÓS */
+.secao-sobre {
+    padding: 60px 20px;
+    background-color: #000;
+    background-image: url('fundo-texturizado.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
