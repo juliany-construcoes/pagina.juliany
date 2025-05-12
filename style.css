@@ -25,42 +25,9 @@ body {
     min-height: 100vh; /* Para centralização vertical opcional */
     display: flex; /* Para centralização vertical opcional */
     flex-direction: column; /* Para centralização vertical opcional */
-    /* Removendo justify-content e align-items para permitir que o novo banner fique no topo */
-    /* justify-content: center; */
-    /* align-items: center; */
+    justify-content: center; /* Para centralização vertical opcional */
+    align-items: center; /* Para centralização vertical opcional */
 }
-
-/* **** INÍCIO DO BANNER DIA DAS MÃES (CSS) **** */
-.dia-das-maes-banner {
-    width: 100%;
-    padding: 0;
-    margin-bottom: 0; /* Remove espaço extra abaixo do div container */
-    line-height: 0; /* Evita espaço extra abaixo da imagem dentro do div */
-    z-index: 3; /* Garante que fique acima de outros elementos */
-    position: relative; /* Para garantir o z-index */
-    text-align: center; /* Centraliza o conteúdo (a imagem) dentro do div */
-    /* Podemos adicionar uma pequena margem inferior negativa aqui se necessário,
-       mas geralmente ajustar a margem da imagem é mais direto. */
-    /* margin-bottom: -10px; */
-}
-
-.dia-das-maes-banner img {
-    display: block; /* Remove espaço branco extra abaixo da imagem */
-    height: auto; /* Mantém a proporção da imagem */
-    object-fit: cover; /* ou 'contain' */
-
-    max-width: 30%; /* <-- MANTIDO EM 30% CONFORME SOLICITADO */
-    /* **** INÍCIO DA MODIFICAÇÃO PARA APROXIMAR (AJUSTE DE MARGEM) **** */
-    /* O 'margin' é top, right, bottom, left. 'auto' centraliza horizontalmente. */
-    /* Vamos reduzir a margem inferior para aproximar. Pode até ser negativa. */
-    margin: 10px auto -20px auto; /* Exemplo: 10px topo, auto laterais, -20px embaixo */
-    /* Experimente mudar o '-20px' para um valor mais negativo (-30px, -40px) se
-       quiser que o conteúdo suba mais e fique mais perto ou até sobreponha um pouco. */
-    /* Se preferir um pequeno espaço fixo, use um valor positivo pequeno: margin: 10px auto 5px auto; */
-    /* **** FIM DA MODIFICAÇÃO PARA APROXIMAR (AJUSTE DE MARGEM) **** */
-}
-/* **** FIM DO BANNER DIA DAS MÃES (CSS) **** */
-
 
 /* FUNDO DE IMAGEM FIXO GERAL */
 .fundo-imagem {
@@ -105,16 +72,12 @@ body {
     z-index: 2;
     width: 100%;
     max-width: 400px;
-    margin: 20px auto; /* Mantém a margem lateral e inferior automática/20px */
+    margin: 20px auto; /* Ajuste na margem */
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center; /* Garante a centralização vertical dos itens internos */
     box-sizing: border-box; /* Garante que o padding não afete a largura total */
-    /* **** INÍCIO DA MODIFICAÇÃO PARA APROXIMAR (AJUSTE DE MARGEM) **** */
-    /* Garantindo que não há margem superior empurrando para baixo */
-    margin-top: 0px;
-     /* **** FIM DA MODIFICAÇÃO PARA APROXIMAR (AJUSTE DE MARGEM) **** */
 }
 
 /* FOTO DE PERFIL E TÍTULO */
@@ -125,7 +88,6 @@ body {
     margin-bottom: 20px;
     position: relative;
     z-index: 2;
-    margin-top: 0; /* Mantém sem margem superior aqui */
 }
 
 .foto-com-contorno {
@@ -161,7 +123,6 @@ body {
     color: #ddd;
     text-align: center;
 }
-
 
 /* BOTÕES */
 .links {
@@ -250,49 +211,4 @@ body {
     z-index: 2;
     position: relative;
     box-sizing: border-box;
-}
-
-/* Corações animados */
-.coraçoes {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 999;
-}
-
-.coracao {
-  position: absolute;
-  bottom: -50px;
-  width: 30px;
-  animation-name: subir;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  opacity: 0;
-}
-
-@keyframes subir {
-  0% {
-    transform: translateX(0px) translateY(0) rotate(0deg);
-    opacity: 0;
-  }
-  25% {
-    transform: translateX(-20px) translateY(-25vh) rotate(-10deg);
-    opacity: 0.7;
-  }
-  50% {
-    transform: translateX(20px) translateY(-50vh) rotate(10deg);
-    opacity: 1;
-  }
-  75% {
-    transform: translateX(-15px) translateY(-75vh) rotate(-5deg);
-    opacity: 0.7;
-  }
-  100% {
-    transform: translateX(10px) translateY(-100vh) rotate(0deg);
-    opacity: 0;
-  }
 }
